@@ -1,24 +1,19 @@
-# README
+# 💻 Devnotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.7.1
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```sh-session
+bundle
+yarn
+bin/rails db:create
+bin/rails db:migrate
+```
 
-* System dependencies
+## Starting Up
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh-session
+docker-compose up -d
+bin/rails s
+```
