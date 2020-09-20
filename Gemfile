@@ -54,3 +54,5 @@ end
 gem 'rubocop', '~> 0.91.0'
 gem 'rubocop-rails', '~> 2.8'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'devise', '~> 4.7'
