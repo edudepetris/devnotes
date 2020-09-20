@@ -1,2 +1,38 @@
 require:
   - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**
+    - bin/**/*
+    - node_modules/**/*
+    - vendor/bundle/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Rails/FilePath:
+  Exclude:
+    - config/environments/development.rb
+
+Style/GlobalStdStream:
+  Exclude:
+    - config/environments/production.rb
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - config/puma.rb
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/channels/application_cable/connection_test.rb
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/test_helper.rb
+    - test/channels/application_cable/connection_test.rb
