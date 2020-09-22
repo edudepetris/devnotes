@@ -29,9 +29,7 @@ Style/RedundantFetchBlock:
     - config/puma.rb
 
 Style/ClassAndModuleChildren:
-  Exclude:
-    - test/test_helper.rb
-    - test/channels/application_cable/connection_test.rb
+  Enabled: false
 
 Layout/LineLength:
   Exclude:
