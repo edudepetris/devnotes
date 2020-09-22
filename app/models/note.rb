@@ -3,4 +3,5 @@ class Note < ApplicationRecord
   belongs_to :user
 
   validates :content, :project_name, presence: true
+  validates :project_name, uniqueness: true
 end

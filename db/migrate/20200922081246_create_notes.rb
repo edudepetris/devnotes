@@ -4,6 +4,7 @@ class CreateNotes < ActiveRecord::Migration[6.0]
       t.text :content
       t.string :project_name
       t.references :user
+      t.index :project_name, unique: true
 
       t.timestamps
     end

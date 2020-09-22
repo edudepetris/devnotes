@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_081246) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_name"], name: "index_notes_on_project_name", unique: true
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 

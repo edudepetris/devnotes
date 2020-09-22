@@ -18,4 +18,10 @@ class NoteTest < ActiveSupport::TestCase
     @note.project_name = nil
     assert_not @note.valid?
   end
+
+  test 'invalid with same project name' do
+    n2 = @note.dup
+    assert_not n2.valid?
+    assert_not_nil n2.errors[:project_name]
+  end
 end
