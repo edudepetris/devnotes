@@ -11,7 +11,7 @@ AllCops:
     - vendor/bundle/**/*
 
 Style/Documentation:
-  Enabled: false
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -27,10 +27,6 @@ Style/GlobalStdStream:
 Style/RedundantFetchBlock:
   Exclude:
     - config/puma.rb
-
-Style/ClassAndModuleChildren:
-  Exclude:
-    - test/channels/application_cable/connection_test.rb
 
 Style/ClassAndModuleChildren:
   Exclude:
