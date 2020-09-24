@@ -1,5 +1,7 @@
 # For CLI client
 class Api::V1::NotesController < ApiController
+  before_action :authenticate_user!
+
   before_action :set_user
 
   def index
