@@ -3,6 +3,8 @@
 class ApiController < ActionController::Base
   before_action :set_default_format
 
+  # Rails documentation.
+  protect_from_forgery unless: -> { request.format.json? }
   # In order for devise to know it can respond to json format
   # https://github.com/waiting-for-dev/devise-jwt/wiki/Configuring-devise-for-APIs
   respond_to :json

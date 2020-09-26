@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      devise_for :users, only: :sessions
+      # Because Devise doesn't support api app out of the box.
+      devise_scope :user do
+        post   '/users/sign_in', to: 'sessions#create'
+        delete '/users/sign_out', to: 'sessions#destroy'
+      end
+
       get '/user/notes', to: 'notes#index'
     end
   end
