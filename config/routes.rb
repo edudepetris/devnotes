@@ -11,7 +11,9 @@ Rails.application.routes.draw do
           delete '/users/sign_out', to: 'sessions#destroy'
         end
 
-        get '/user/notes', to: 'notes#index'
+        resource :user, only: [] do
+          resources :notes, only: %i[create update]
+        end
       end
     end
   end
