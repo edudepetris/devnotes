@@ -17,6 +17,7 @@ bin/rails db:seed
 ```sh-session
 docker-compose up -d
 bin/rails s
+bin/webpack-dev-server # optional
 ```
 
 #### React HMR
