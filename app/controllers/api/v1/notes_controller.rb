@@ -5,10 +5,14 @@ class Api::V1::NotesController < ApiController
   def update
     note = current_user.notes.find(params[:id])
     note.update!(note_params)
+
+    render json: note
   end
 
   def create
-    current_user.notes.create!(note_params)
+    note = current_user.notes.create!(note_params)
+
+    render json: note
   end
 
   private
