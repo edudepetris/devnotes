@@ -9,7 +9,16 @@ class ApiController < ActionController::Base
   # https://github.com/waiting-for-dev/devise-jwt/wiki/Configuring-devise-for-APIs
   respond_to :json
 
+  # devise-jwt
   responders :my_application
+
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    render json: { message: e.message }, status: :not_found
+  end
+
+  rescue_from ActiveRecord::RecordInvalid do |e|
+    render json: { message: e.message }, status: :unprocessable_entity
+  end
 
   private
 

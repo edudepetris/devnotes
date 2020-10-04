@@ -38,7 +38,7 @@ class Api::V1::SessionsControllerTest < ActionDispatch::IntegrationTest
     # sign out
     delete api_v1_users_sign_out_path(format: :json), headers: auth_headers(auth)
 
-    get api_v1_user_notes_path, headers: auth_headers(auth)
+    post api_v1_user_notes_path, params: {}, headers: auth_headers(auth)
 
     assert_response 401
   end
