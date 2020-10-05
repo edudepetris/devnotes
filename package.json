@@ -17,7 +17,8 @@
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom",
     "react_ujs": "^2.6.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "yup": "^0.29.3"
   },
   "version": "0.1.0",
   "devDependencies": {
