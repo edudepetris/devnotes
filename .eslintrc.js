@@ -6,6 +6,8 @@ module.exports = {
   extends: [
     'airbnb',
     'plugin:react/recommended',
+    'prettier',
+    'prettier/react',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -16,10 +18,13 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier',
   ],
   rules: {
     semi: 0, // default rails files
     quotes: 0, // deault rails files
     'max-len': ["error", { "ignoreComments": true }], // deault rails files
+    'react/jsx-filename-extension': 0, // just a preference
+    'prettier/prettier': 'error' // run prettier as an eslint rule
   },
 };
