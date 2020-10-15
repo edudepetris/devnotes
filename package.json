@@ -16,12 +16,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom",
+    "react-hot-loader": "^4.13.0",
     "react_ujs": "^2.6.1",
     "turbolinks": "^5.2.0",
     "yup": "^0.29.3"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.12.0",
@@ -30,11 +33,13 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.5.2",
     "prettier": "2.1.2",
-    "react-hot-loader": "^4.13.0",
+    "snapshot-diff": "^0.8.1",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "lint": "eslint app/javascript"
+    "lint": "eslint app/javascript",
+    "test": "jest app/javascript"
   }
 }
