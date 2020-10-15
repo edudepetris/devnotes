@@ -9,6 +9,7 @@ export default function ThemeToggler() {
         icon={colorMode === 'light' ? 'moon' : 'sun'}
         onClick={toggleColorMode}
         variant="ghost"
+        data-testid={colorMode}
       />
     </Box>
   )
