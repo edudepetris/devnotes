@@ -137,7 +137,12 @@ const LoginForm = ({
                 value={values.user.password}
               />
               <InputRightElement width="3rem">
-                <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
+                <Button
+                  h="1.5rem"
+                  size="sm"
+                  onClick={handlePasswordVisibility}
+                  data-testid="password-view"
+                >
                   {showPassword ? (
                     <Icon name="view-off" />
                   ) : (
