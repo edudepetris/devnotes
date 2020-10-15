@@ -40,6 +40,6 @@
   },
   "scripts": {
     "lint": "eslint app/javascript",
-    "test": "jest"
+    "test": "jest app/javascript"
   }
 }
