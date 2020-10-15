@@ -4420,6 +4420,18 @@ expect@^26.5.2:
     jest-message-util "^26.5.2"
     jest-regex-util "^26.0.0"
 
+expect@^26.5.3:
+  version "26.5.3"
+  resolved "https://registry.yarnpkg.com/expect/-/expect-26.5.3.tgz#89d9795036f7358b0a9a5243238eb8086482d741"
+  integrity sha512-kkpOhGRWGOr+TEFUnYAjfGvv35bfP+OlPtqPIJpOCR9DVtv8QV+p8zG0Edqafh80fsjeE+7RBcVUq1xApnYglw==
+  dependencies:
+    "@jest/types" "^26.5.2"
+    ansi-styles "^4.0.0"
+    jest-get-type "^26.3.0"
+    jest-matcher-utils "^26.5.2"
+    jest-message-util "^26.5.2"
+    jest-regex-util "^26.0.0"
+
 express@^4.17.1:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -5881,7 +5893,7 @@ jest-diff@^25.2.1:
     jest-get-type "^25.2.6"
     pretty-format "^25.5.0"
 
-jest-diff@^26.5.2:
+jest-diff@^26.1.0, jest-diff@^26.5.2:
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-26.5.2.tgz#8e26cb32dc598e8b8a1b9deff55316f8313c8053"
   integrity sha512-HCSWDUGwsov5oTlGzrRM+UPJI/Dpqi9jzeV0fdRNi3Ch5bnoXhnyJMmVg2juv9081zLIy3HGPI5mcuGgXM2xRA==
@@ -6127,6 +6139,28 @@ jest-serializer@^26.5.0:
   dependencies:
     "@types/node" "*"
     graceful-fs "^4.2.4"
+
+jest-snapshot@^26.1.0:
+  version "26.5.3"
+  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-26.5.3.tgz#f6b4b4b845f85d4b0dadd7cf119c55d0c1688601"
+  integrity sha512-ZgAk0Wm0JJ75WS4lGaeRfa0zIgpL0KD595+XmtwlIEMe8j4FaYHyZhP1LNOO+8fXq7HJ3hll54+sFV9X4+CGVw==
+  dependencies:
+    "@babel/types" "^7.0.0"
+    "@jest/types" "^26.5.2"
+    "@types/babel__traverse" "^7.0.4"
+    "@types/prettier" "^2.0.0"
+    chalk "^4.0.0"
+    expect "^26.5.3"
+    graceful-fs "^4.2.4"
+    jest-diff "^26.5.2"
+    jest-get-type "^26.3.0"
+    jest-haste-map "^26.5.2"
+    jest-matcher-utils "^26.5.2"
+    jest-message-util "^26.5.2"
+    jest-resolve "^26.5.2"
+    natural-compare "^1.4.0"
+    pretty-format "^26.5.2"
+    semver "^7.3.2"
 
 jest-snapshot@^26.5.2:
   version "26.5.2"
@@ -8393,7 +8427,7 @@ pretty-format@^25.2.1, pretty-format@^25.5.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-pretty-format@^26.4.2, pretty-format@^26.5.2:
+pretty-format@^26.1.0, pretty-format@^26.4.2, pretty-format@^26.5.2:
   version "26.5.2"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-26.5.2.tgz#5d896acfdaa09210683d34b6dc0e6e21423cd3e1"
   integrity sha512-VizyV669eqESlkOikKJI8Ryxl/kPpbdLwNdPs2GrbQs18MpySB5S0Yo0N7zkg2xTRiFq4CFw8ct5Vg4a0xP0og==
@@ -9394,6 +9428,15 @@ snapdragon@^0.8.1:
     source-map "^0.5.6"
     source-map-resolve "^0.5.0"
     use "^3.1.0"
+
+snapshot-diff@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/snapshot-diff/-/snapshot-diff-0.8.1.tgz#09cc28849a6cee4073818d81dfd9f005e72632ca"
+  integrity sha512-vPb0JHikbZM8kK4A/ktIEbM5FwHEgGQ330ARxgaccDcVgapY73sjKpK03uxJGHb0eDViFWTch0OY3ax52AIKGw==
+  dependencies:
+    jest-diff "^26.1.0"
+    jest-snapshot "^26.1.0"
+    pretty-format "^26.1.0"
 
 sockjs-client@1.4.0:
   version "1.4.0"
