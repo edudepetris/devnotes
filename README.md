@@ -20,6 +20,14 @@ bin/rails s
 bin/webpack-dev-server # optional
 ```
 
+#### Run tests
+
+```sh-session
+docker-compose up -d
+bin/rails test
+bin/rails test:system
+```
+
 #### React HMR
 
 - Not working with ssr at the moment. [#985](https://github.com/reactjs/react-rails/issues/985)
