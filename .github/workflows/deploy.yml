@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ["CI-linter", "CI-test"]
+    workflows: ["Jest specs", "JS lint", "Rubocop", "Ruby tests", "System tests"]
     branches: [master]
     types:
       - completed
