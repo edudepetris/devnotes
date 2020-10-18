@@ -12,8 +12,6 @@ class ResetPasswordTest < ApplicationSystemTestCase
       click_on 'Send me reset password instructions'
     end
 
-    reset_password_token = get_reset_password_token
-
     assert_text 'You will receive an email with instructions on how to reset your password in a few minutes.'
 
     visit edit_user_password_path(reset_password_token: reset_password_token)
@@ -28,7 +26,7 @@ class ResetPasswordTest < ApplicationSystemTestCase
     assert_text 'welcome'
   end
 
-  def get_reset_password_token
+  def reset_password_token
     # get the email
     message = ActionMailer::Base.deliveries[0].to_s
     rpt_index = message.index('reset_password_token') + 'reset_password_token'.length + 1
