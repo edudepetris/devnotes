@@ -9,7 +9,7 @@ class SignInTest < ApplicationSystemTestCase
 
     click_on 'Sign In'
 
-    assert_text 'welcome'
+    assert_text 'Devnotes'
   end
 
   test 'signing in with wrong credentials' do
