@@ -23,7 +23,7 @@ class ResetPasswordTest < ApplicationSystemTestCase
     user = users(:one)
 
     assert_nil user.reload.reset_password_token
-    assert_text 'welcome'
+    assert_text 'Devnotes'
   end
 
   def reset_password_token

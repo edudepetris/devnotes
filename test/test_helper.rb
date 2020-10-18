@@ -16,5 +16,9 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
+  # jwt
   include ApiSignInHelper
+
+  # session
+  include Devise::Test::IntegrationHelpers
 end
