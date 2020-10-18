@@ -38,5 +38,7 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Prepare test db
         run: rake db:test:prepare
+      - name: Precompile assets
+        run:  bin/rails assets:precompile
       - name: Run test
         run: bin/rails test
