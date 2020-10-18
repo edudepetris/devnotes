@@ -1,6 +1,6 @@
 require 'application_system_test_case'
 
-class SignInsTest < ApplicationSystemTestCase
+class SignInTest < ApplicationSystemTestCase
   test 'signing in' do
     visit new_user_session_path
 
