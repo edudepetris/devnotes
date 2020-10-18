@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Link,
   IconButton,
@@ -22,7 +23,12 @@ const MenuItems = ({children}) => (
   </Text>
 )
 
-const NavBar = (props) => {
+MenuItems.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+/* eslint-disable no-unused-vars */
+const NavBar = ({authenticityToken}) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
 
@@ -85,6 +91,11 @@ const NavBar = (props) => {
       </Box>
     </Flex>
   )
+}
+/* eslint-enable no-unused-vars */
+
+NavBar.propTypes = {
+  authenticityToken: PropTypes.string.isRequired,
 }
 
 export default NavBar

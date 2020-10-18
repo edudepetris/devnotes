@@ -8,7 +8,7 @@ import NavBar from '../../components/NavBar'
 const Dashboard = ({authenticityToken}) => {
   return (
     <ThemeProvider>
-      <NavBar />
+      <NavBar authenticityToken={authenticityToken} />
     </ThemeProvider>
   )
 }
