@@ -1,7 +1,7 @@
 <%= react_component("ForgotPasswordScreen", {
   resource: resource.serializable_hash,
   forgotPasswordPath: password_path(resource_name),
-  signInPath: session_path(resource_name),
-  signUpPath: registration_path(resource_name),
+  signInPath: new_session_path(resource_name),
+  signUpPath: new_registration_path(resource_name),
   errorMessage: resource.errors.full_messages.join,
   authenticityToken: form_authenticity_token}) %>
