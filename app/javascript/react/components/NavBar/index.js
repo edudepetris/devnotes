@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  Icon,
+  Link,
+  IconButton,
   Box,
   Heading,
   Flex,
@@ -42,7 +43,7 @@ const NavBar = (props) => {
       </Flex>
 
       <Box display={{sm: 'block', md: 'none'}} onClick={handleToggle}>
-        <Icon name="menu" />
+        <IconButton aria-label="Menu toggler" icon="menu" />
       </Box>
 
       <Box
@@ -73,6 +74,12 @@ const NavBar = (props) => {
               <MenuItem>Docs</MenuItem>
               <MenuItem>FAQ</MenuItem>
             </MenuGroup>
+            <MenuDivider />
+            <MenuItem>
+              <Link href="/users/sign_out" data-method="delete">
+                Sign out
+              </Link>
+            </MenuItem>
           </MenuList>
         </Menu>
       </Box>
