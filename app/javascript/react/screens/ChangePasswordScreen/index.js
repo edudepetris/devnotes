@@ -28,7 +28,6 @@ import ThemeProvider from '../../components/ThemeProvider'
 const ChangePasswordForm = ({
   authenticityToken,
   errorMessages,
-  resource,
   passwordPath,
   resetPasswordToken,
 }) => {
@@ -188,9 +187,6 @@ const ChangePasswordForm = ({
 }
 
 ChangePasswordForm.propTypes = {
-  resource: PropTypes.shape({
-    email: PropTypes.string,
-  }).isRequired,
   authenticityToken: PropTypes.string.isRequired,
   errorMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
   passwordPath: PropTypes.string.isRequired,
@@ -200,7 +196,6 @@ ChangePasswordForm.propTypes = {
 const ChangePasswordScreen = ({
   authenticityToken,
   errorMessages,
-  resource,
   signInPath,
   signUpPath,
   passwordPath,
@@ -220,7 +215,6 @@ const ChangePasswordScreen = ({
           <ChangePasswordForm
             authenticityToken={authenticityToken}
             errorMessages={errorMessages}
-            resource={resource}
             passwordPath={passwordPath}
             resetPasswordToken={resetPasswordToken}
           />
@@ -239,9 +233,6 @@ const ChangePasswordScreen = ({
 }
 
 ChangePasswordScreen.propTypes = {
-  resource: PropTypes.shape({
-    email: PropTypes.string,
-  }).isRequired,
   authenticityToken: PropTypes.string.isRequired,
   errorMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
   signInPath: PropTypes.string.isRequired,
