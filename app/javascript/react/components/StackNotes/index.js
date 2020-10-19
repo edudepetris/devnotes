@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Stack, Heading, Text, PseudoBox, useColorMode} from '@chakra-ui/core'
 
-/* eslint-disable jsx-a11y/role-supports-aria-props */
 const Feature = ({title, desc, selected}) => {
   const {colorMode} = useColorMode()
   const bgColorHover = {light: 'gray.100', dark: 'gray.700'}
@@ -13,7 +12,7 @@ const Feature = ({title, desc, selected}) => {
   return (
     <PseudoBox
       aria-selected={selected}
-      role="group"
+      role="tab"
       rounded="md"
       p={5}
       m={1}
@@ -37,7 +36,6 @@ const Feature = ({title, desc, selected}) => {
     </PseudoBox>
   )
 }
-/* eslint-enable jsx-a11y/role-supports-aria-props */
 
 Feature.propTypes = {
   title: PropTypes.string.isRequired,
