@@ -1,1 +1,10 @@
-<%= react_component("Dashboard", { authenticityToken: form_authenticity_token }) %>
+<%= react_component("Dashboard", {
+  authenticityToken: form_authenticity_token,
+  notes: current_user.notes.map do |note|
+    {
+      title: note.project_name,
+      id: note.id,
+      desc: note.content
+    }
+  end
+}) %>
