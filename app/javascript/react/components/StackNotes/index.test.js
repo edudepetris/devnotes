@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react'
 import withAllTheProviders from '../../test_helpers'
 import StackNotes from './index'
 
@@ -28,7 +28,9 @@ describe('StackNotes', () => {
 
   it('renders out all notes', () => {
     const {getByText} = render(
-      withAllTheProviders(<StackNotes notes={notes} />),
+      withAllTheProviders(
+        <StackNotes notes={notes} handleSelectedNote={() => {}} />,
+      ),
     )
 
     expect(getByText(notes[0].title)).toBeTruthy()
@@ -37,10 +39,13 @@ describe('StackNotes', () => {
   })
 
   it('highlight the selected one', () => {
-    const {getByRole} = render(
-      withAllTheProviders(<StackNotes notes={notes} selectedNoteId={1} />),
+    const {getByRole, getByText} = render(
+      withAllTheProviders(
+        <StackNotes notes={notes} handleSelectedNote={() => {}} />,
+      ),
     )
 
+    fireEvent.click(getByText(notes[0].title))
     expect(getByRole('tab', {selected: true})).toBeTruthy()
   })
 })

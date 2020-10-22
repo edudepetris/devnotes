@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Stack, Heading, Text, PseudoBox, useColorMode} from '@chakra-ui/core'
 
-const Feature = ({title, desc, selected}) => {
+const Feature = ({title, desc, selected, handleClick}) => {
   const {colorMode} = useColorMode()
   const bgColorHover = {light: 'gray.100', dark: 'gray.700'}
   const bgColorActive = {light: 'gray.200', dark: 'gray.800'}
@@ -11,6 +11,7 @@ const Feature = ({title, desc, selected}) => {
 
   return (
     <PseudoBox
+      onClick={handleClick}
       aria-selected={selected}
       role="tab"
       rounded="md"
@@ -40,6 +41,7 @@ const Feature = ({title, desc, selected}) => {
 Feature.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
   selected: PropTypes.bool,
 }
 
@@ -47,15 +49,26 @@ Feature.defaultProps = {
   selected: false,
 }
 
-const StackNotes = ({notes, selectedNoteId}) => {
+const StackNotes = ({notes, handleSelectedNote}) => {
+  const [selected, setSelected] = React.useState(null)
+
+  const handleSelected = (index) => {
+    setSelected(index)
+    handleSelectedNote(notes[index])
+  }
+
+  // Add memo
   return (
     <Stack spacing={8}>
-      {notes.map((note) => (
+      {notes.map(({title, desc, id}, index) => (
         <Feature
-          title={note.title}
-          desc={note.desc}
-          key={note.id}
-          selected={selectedNoteId === note.id}
+          title={title}
+          desc={desc}
+          key={id}
+          selected={selected === index}
+          handleClick={() => {
+            handleSelected(index)
+          }}
         />
       ))}
     </Stack>
@@ -70,10 +83,7 @@ StackNotes.propTypes = {
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,
-  selectedNoteId: PropTypes.number,
-}
-StackNotes.defaultProps = {
-  selectedNoteId: -1,
+  handleSelectedNote: PropTypes.func.isRequired,
 }
 
 export default StackNotes
