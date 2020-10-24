@@ -4,7 +4,7 @@
     {
       title: note.project_name,
       id: note.id,
-      desc: note.content
+      desc: note.content[0..256]
     }
   end
 }) %>
