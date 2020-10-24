@@ -2,15 +2,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import devnotesTheme from '../../theme'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {github, dracula} from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
-import {useColorMode, Box, Skeleton} from '@chakra-ui/core'
+import {useColorMode, Box} from '@chakra-ui/core'
+import devnotesTheme from '../../theme'
 
+/* eslint-disable react/display-name, react/prop-types */
 const Note = ({note}) => {
   const {colorMode} = useColorMode()
   const syntaxHighlighterTheme = {light: github, dark: dracula}
@@ -21,8 +22,9 @@ const Note = ({note}) => {
       <SyntaxHighlighter
         style={syntaxHighlighterTheme[colorMode]}
         language={language}
-        children={value}
-      />
+      >
+        {value}
+      </SyntaxHighlighter>
     ),
   }
 
@@ -33,13 +35,15 @@ const Note = ({note}) => {
   return (
     <Box>
       <ReactMarkdown
-        children={note.content}
         plugins={[[gfm, {singleTilde: false}]]}
         renderers={renderers}
-      />
+      >
+        {note.content}
+      </ReactMarkdown>
     </Box>
   )
 }
+/* eslint-enable react/display-name, react/prop-types */
 
 Note.propTypes = {
   note: PropTypes.shape({
