@@ -11,6 +11,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "chakra-ui-markdown-renderer": "^0.2.0",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.7",
     "prop-types": "^15.7.2",
@@ -19,6 +20,7 @@
     "react-hot-loader": "^4.13.0",
     "react-markdown": "^5.0.2",
     "react_ujs": "^2.6.1",
+    "remark-gfm": "^1.0.0",
     "turbolinks": "^5.2.0",
     "yup": "^0.29.3"
   },
