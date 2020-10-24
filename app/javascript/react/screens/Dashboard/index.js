@@ -2,10 +2,11 @@ import {hot} from 'react-hot-loader/root'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Box, Grid} from '@chakra-ui/core'
+import {Box, Grid, Skeleton, Flex} from '@chakra-ui/core'
 import ThemeProvider from '../../components/ThemeProvider'
 import NavBar from '../../components/NavBar'
 import StackNotes from '../../components/StackNotes'
+import Note from '../../components/Note'
 
 import {getNoteById} from '../../api'
 
@@ -48,12 +49,14 @@ const Dashboard = ({authenticityToken, notes}) => {
         <Box w="100%" h="100vh" p="2" overflowY="scroll">
           <StackNotes notes={notes} handleSelectedNote={handleSelectedNote} />
         </Box>
-        <Box w="100%" h="100vh" p="2" overflowY="scroll">
+        <Box w="90%" h="100vh" p="2" overflowY="scroll">
           {!loading && error && <>Error</>}
 
-          {loading && <>Loading</>}
-
-          {!loading && note && JSON.stringify(note, undefined, 2)}
+          <Flex justify="center">
+            <Skeleton isLoaded={!loading}>
+              <Note note={note} />
+            </Skeleton>
+          </Flex>
         </Box>
       </Grid>
     </ThemeProvider>
