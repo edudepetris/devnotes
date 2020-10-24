@@ -19,5 +19,13 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    namespace :frontend do
+      namespace :v1 do
+        defaults format: :json do
+          resources :notes, only: %i[show]
+        end
+      end
+    end
   end
 end
