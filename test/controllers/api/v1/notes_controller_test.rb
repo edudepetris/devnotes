@@ -32,7 +32,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     post api_v1_user_notes_path, params: body, headers: @auth_headers
 
     assert_response :success
-    assert_equal 2, @user.notes.count
+    assert_equal 3, @user.notes.count
   end
 
   test 'update' do
