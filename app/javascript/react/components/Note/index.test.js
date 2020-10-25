@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from '@testing-library/react'
+import {render, fireEvent, waitFor} from '@testing-library/react'
 import withAllTheProviders from '../../test_helpers'
 import Note from './index'
 
@@ -24,5 +24,25 @@ describe('Note', () => {
 
     // searching by h1
     expect(getByRole('heading', {level: 1})).toBeTruthy()
+  })
+
+  it('shows meta information', () => {
+    const {getByText} = render(withAllTheProviders(<Note note={note} />))
+
+    waitFor(() => {
+      fireEvent.click(getByText('Meta'))
+      expect(getByText('Project Name')).toBeTruthy()
+    })
+  })
+
+  it('allows render out as raw', () => {
+    const {getByRole, getByText} = render(
+      withAllTheProviders(<Note note={note} />),
+    )
+
+    waitFor(() => {
+      fireEvent.click(getByText('Raw'))
+      expect(getByRole('heading', {level: 1})).not.toBeTruthy()
+    })
   })
 })
