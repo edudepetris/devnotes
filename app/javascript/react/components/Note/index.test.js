@@ -34,4 +34,15 @@ describe('Note', () => {
       expect(getByText('Project Name')).toBeTruthy()
     })
   })
+
+  it('allows render out as raw', () => {
+    const {getByRole, getByText} = render(
+      withAllTheProviders(<Note note={note} />),
+    )
+
+    waitFor(() => {
+      fireEvent.click(getByText('Raw'))
+      expect(getByRole('heading', {level: 1})).not.toBeTruthy()
+    })
+  })
 })

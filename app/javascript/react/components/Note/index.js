@@ -53,6 +53,7 @@ Meta.propTypes = {
 
 /* eslint-disable react/display-name, react/prop-types */
 const Note = ({note}) => {
+  const {isOpen: showRaw, onToggle} = useDisclosure()
   const {isOpen, onOpen, onClose} = useDisclosure()
   const btnRef = React.useRef()
   const {colorMode} = useColorMode()
@@ -76,12 +77,13 @@ const Note = ({note}) => {
   return (
     <Box>
       <ButtonGroup spacing={2}>
-        <Button size="xs">Raw</Button>
+        <Button size="xs" onClick={onToggle}>
+          Raw
+        </Button>
         <Button size="xs" ref={btnRef} onClick={onOpen}>
           Meta
         </Button>
       </ButtonGroup>
-
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -106,12 +108,16 @@ const Note = ({note}) => {
         </DrawerContent>
       </Drawer>
 
-      <ReactMarkdown
-        plugins={[[gfm, {singleTilde: false}]]}
-        renderers={renderers}
-      >
-        {note.content}
-      </ReactMarkdown>
+      {showRaw ? (
+        <Box as="pre">{note.content}</Box>
+      ) : (
+        <ReactMarkdown
+          plugins={[[gfm, {singleTilde: false}]]}
+          renderers={renderers}
+        >
+          {note.content}
+        </ReactMarkdown>
+      )}
     </Box>
   )
 }
