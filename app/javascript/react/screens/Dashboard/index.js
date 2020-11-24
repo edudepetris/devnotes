@@ -7,6 +7,7 @@ import ThemeProvider from '../../components/ThemeProvider'
 import NavBar from '../../components/NavBar'
 import StackNotes from '../../components/StackNotes'
 import Note from '../../components/Note'
+import Footer from '../../components/Footer'
 
 import {getNoteById} from '../../api'
 
@@ -56,6 +57,10 @@ const Dashboard = ({authenticityToken, notes}) => {
             <Skeleton isLoaded={!loading}>
               <Note note={note} />
             </Skeleton>
+          </Flex>
+
+          <Flex justify="center">
+            <Footer />
           </Flex>
         </Box>
       </Grid>
