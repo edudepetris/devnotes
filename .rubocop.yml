@@ -9,6 +9,8 @@ AllCops:
     - bin/**/*
     - node_modules/**/*
     - vendor/bundle/**/*
+    - config/**/*
+    - config.ru
 
 Style/Documentation:
   Enabled: true
