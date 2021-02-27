@@ -15,6 +15,7 @@ import {
   MenuDivider,
   MenuList,
 } from '@chakra-ui/react'
+import {HamburgerIcon} from '@chakra-ui/icons'
 import ThemeToggler from '../ThemeToggler'
 
 const MenuItems = ({children}) => (
@@ -49,7 +50,7 @@ const NavBar = ({authenticityToken}) => {
       </Flex>
 
       <Box display={{sm: 'block', md: 'none'}} onClick={handleToggle}>
-        <IconButton aria-label="Menu toggler" icon="menu" />
+        <IconButton aria-label="Menu toggler" icon={<HamburgerIcon />} />
       </Box>
 
       <Box
