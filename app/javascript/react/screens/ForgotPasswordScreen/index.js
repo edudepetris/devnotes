@@ -90,7 +90,7 @@ const ForgotPasswordForm = ({
             <Input
               type="email"
               placeholder=""
-              boxSize="lg"
+              size="lg"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}

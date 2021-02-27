@@ -30,7 +30,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
         bg: bgColorSelected[colorMode],
       }}
     >
-      <Heading fontSize="xl">{title}</Heading>
+      <Heading size="sm">{title}</Heading>
       <Text mt={4} color="gray.500" isTruncated>
         {desc}
       </Text>

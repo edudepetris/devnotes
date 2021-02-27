@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
@@ -106,7 +105,7 @@ const LoginForm = ({
             <Input
               type="email"
               placeholder="test@test.com"
-              boxSize="lg"
+              size="lg"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -129,7 +128,7 @@ const LoginForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                boxSize="lg"
+                size="lg"
                 name="[user][password]"
                 id="user_password"
                 onChange={handleChange}
@@ -138,8 +137,7 @@ const LoginForm = ({
               />
               <InputRightElement width="3rem">
                 <Button
-                  h="1.5rem"
-                  boxSize="sm"
+                  size="xs"
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
@@ -248,4 +246,4 @@ SignInScreen.propTypes = {
   resetPasswordPath: PropTypes.string.isRequired,
 }
 
-export default hot(SignInScreen)
+export default SignInScreen

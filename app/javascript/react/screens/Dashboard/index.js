@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -79,4 +78,4 @@ Dashboard.propTypes = {
   ).isRequired,
 }
 
-export default hot(Dashboard)
+export default Dashboard
