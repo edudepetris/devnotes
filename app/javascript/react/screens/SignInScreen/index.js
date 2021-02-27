@@ -9,7 +9,6 @@ import {
   FormControl,
   FormLabel,
   Alert,
-  Icon,
   Box,
   Text,
   Flex,
@@ -22,6 +21,7 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react'
+import {ViewOffIcon, ViewIcon} from '@chakra-ui/icons'
 import ThemeToggler from '../../components/ThemeToggler'
 import ThemeProvider from '../../components/ThemeProvider'
 
@@ -143,11 +143,7 @@ const LoginForm = ({
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
-                  {showPassword ? (
-                    <Icon name="view-off" />
-                  ) : (
-                    <Icon name="view" />
-                  )}
+                  {showPassword ? <ViewOffIcon /> : <ViewIcon />}
                 </Button>
               </InputRightElement>
             </InputGroup>
@@ -168,7 +164,12 @@ const LoginForm = ({
             mt={4}
           >
             {isLoading ? (
-              <CircularProgress isIndeterminate w="24px" h="24px" color="teal" />
+              <CircularProgress
+                isIndeterminate
+                w="24px"
+                h="24px"
+                color="teal"
+              />
             ) : (
               'Sign In'
             )}
