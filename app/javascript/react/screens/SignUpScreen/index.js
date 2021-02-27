@@ -145,11 +145,7 @@ const SignUpForm = ({
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
-                  {showPassword ? (
-                    <ViewOffIcon />
-                  ) : (
-                    <ViewIcon />
-                  )}
+                  {showPassword ? <ViewOffIcon /> : <ViewIcon />}
                 </Button>
               </InputRightElement>
             </InputGroup>
