@@ -115,7 +115,7 @@ const ChangePasswordForm = ({
                 size="lg"
                 name="[user][password]"
                 id="user_password"
-                autocomplete="new-password"
+                autoComplete="new-password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.user.password}
@@ -150,7 +150,7 @@ const ChangePasswordForm = ({
               name="[user][password_confirmation]"
               id="user_password_confirmation"
               onChange={handleChange}
-              autocomplete="new-password"
+              autoComplete="new-password"
               onBlur={handleBlur}
               value={values.user.password_confirmation}
             />
