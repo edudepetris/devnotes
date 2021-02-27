@@ -105,7 +105,7 @@ const SignUpForm = ({
             <Input
               type="email"
               placeholder=""
-              size="lg"
+              boxSize="lg"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -130,7 +130,7 @@ const SignUpForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                size="lg"
+                boxSize="lg"
                 name="[user][password]"
                 id="user_password"
                 autocomplete="new-password"
@@ -141,7 +141,7 @@ const SignUpForm = ({
               <InputRightElement width="3rem">
                 <Button
                   h="1.5rem"
-                  size="sm"
+                  boxSize="sm"
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
@@ -168,7 +168,7 @@ const SignUpForm = ({
             <Input
               type="password"
               placeholder="*******"
-              size="lg"
+              boxSize="lg"
               name="[user][password_confirmation]"
               id="user_password_confirmation"
               onChange={handleChange}
@@ -186,14 +186,14 @@ const SignUpForm = ({
             ) : null}
           </FormControl>
           <Button
-            variantColor="teal"
+            colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
             {isLoading ? (
-              <CircularProgress isIndeterminate size="24px" color="teal" />
+              <CircularProgress isIndeterminate w="24px" h="24px" color="teal" />
             ) : (
               'Sign Up'
             )}

@@ -90,7 +90,7 @@ const ForgotPasswordForm = ({
             <Input
               type="email"
               placeholder=""
-              size="lg"
+              boxSize="lg"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -108,14 +108,14 @@ const ForgotPasswordForm = ({
           </FormControl>
 
           <Button
-            variantColor="teal"
+            colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
             {isLoading ? (
-              <CircularProgress isIndeterminate size="24px" color="teal" />
+              <CircularProgress isIndeterminate w="24px" h="24px" color="teal" />
             ) : (
               'Send me reset password instructions'
             )}
