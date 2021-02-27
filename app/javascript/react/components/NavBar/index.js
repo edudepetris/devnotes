@@ -14,7 +14,7 @@ import {
   Menu,
   MenuDivider,
   MenuList,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import ThemeToggler from '../ThemeToggler'
 
 const MenuItems = ({children}) => (
@@ -43,7 +43,7 @@ const NavBar = ({authenticityToken}) => {
       color="currentColor"
     >
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg">
+        <Heading as="h1" boxSize="lg">
           Devnotes
         </Heading>
       </Flex>

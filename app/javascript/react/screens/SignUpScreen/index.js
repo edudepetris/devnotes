@@ -21,7 +21,7 @@ import {
   CircularProgress,
   InputGroup,
   InputRightElement,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import ThemeToggler from '../../components/ThemeToggler'
 import ThemeProvider from '../../components/ThemeProvider'
 

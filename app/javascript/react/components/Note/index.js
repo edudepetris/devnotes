@@ -24,7 +24,7 @@ import {
   Code,
   List,
   ListItem,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import devnotesTheme from '../../theme'
 
 /* eslint-disable react/no-children-prop */
@@ -32,13 +32,13 @@ const Meta = ({projectName, createdAt, updatedAt}) => {
   return (
     <List styleType="disc">
       <ListItem>
-        <Code variantColor="teal" children="Project name" /> {projectName}
+        <Code colorScheme="teal" children="Project name" /> {projectName}
       </ListItem>
       <ListItem>
-        <Code variantColor="teal" children="Created at" /> {createdAt}
+        <Code colorScheme="teal" children="Created at" /> {createdAt}
       </ListItem>
       <ListItem>
-        <Code variantColor="teal" children="Updated at" /> {updatedAt}
+        <Code colorScheme="teal" children="Updated at" /> {updatedAt}
       </ListItem>
     </List>
   )
@@ -77,10 +77,10 @@ const Note = ({note}) => {
   return (
     <Box>
       <ButtonGroup spacing={2}>
-        <Button size="xs" onClick={onToggle}>
+        <Button boxSize="xs" onClick={onToggle}>
           Raw
         </Button>
-        <Button size="xs" ref={btnRef} onClick={onOpen}>
+        <Button boxSize="xs" ref={btnRef} onClick={onOpen}>
           Meta
         </Button>
       </ButtonGroup>
@@ -89,7 +89,7 @@ const Note = ({note}) => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="sm"
+        boxSize="sm"
       >
         <DrawerOverlay />
         <DrawerContent>

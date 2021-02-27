@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Stack, Heading, Text, PseudoBox, useColorMode} from '@chakra-ui/core'
+import {Stack, Heading, Text, Box, useColorMode} from '@chakra-ui/react'
 
 const Feature = ({title, desc, selected, handleClick}) => {
   const {colorMode} = useColorMode()
@@ -10,7 +10,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
   const colorSelected = {light: 'teal.800', dark: 'teal.200'}
 
   return (
-    <PseudoBox
+    <Box
       onClick={handleClick}
       aria-selected={selected}
       role="tab"
@@ -34,7 +34,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
       <Text mt={4} color="gray.500" isTruncated>
         {desc}
       </Text>
-    </PseudoBox>
+    </Box>
   )
 }
 
