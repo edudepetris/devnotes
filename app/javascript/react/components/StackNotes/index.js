@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Stack, Heading, Text, PseudoBox, useColorMode} from '@chakra-ui/core'
+import {Stack, Heading, Text, Box, useColorMode} from '@chakra-ui/react'
 
 const Feature = ({title, desc, selected, handleClick}) => {
   const {colorMode} = useColorMode()
@@ -10,7 +10,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
   const colorSelected = {light: 'teal.800', dark: 'teal.200'}
 
   return (
-    <PseudoBox
+    <Box
       onClick={handleClick}
       aria-selected={selected}
       role="tab"
@@ -18,7 +18,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
       p={5}
       m={1}
       cursor="pointer"
-      boxShadow="md"
+      shadow="md"
       borderWidth="1px"
       _hover={{bg: bgColorHover[colorMode]}}
       _active={{
@@ -30,11 +30,11 @@ const Feature = ({title, desc, selected, handleClick}) => {
         bg: bgColorSelected[colorMode],
       }}
     >
-      <Heading fontSize="xl">{title}</Heading>
+      <Heading size="sm">{title}</Heading>
       <Text mt={4} color="gray.500" isTruncated>
         {desc}
       </Text>
-    </PseudoBox>
+    </Box>
   )
 }
 
@@ -59,7 +59,7 @@ const StackNotes = ({notes, handleSelectedNote}) => {
 
   // Add memo
   return (
-    <Stack spacing={8}>
+    <Stack spacing={4}>
       {notes.map(({title, desc, id}, index) => (
         <Feature
           title={title}

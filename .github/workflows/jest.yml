@@ -8,7 +8,7 @@ jobs:
     name: Jest specs
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-latest]
         node: [10.x, 12.x, 14.x]
 
     runs-on: ${{ matrix.os }}
@@ -36,4 +36,4 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Jest Specs
-        run: yarn test
+        run: yarn test --ci

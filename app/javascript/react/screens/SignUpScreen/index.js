@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
@@ -9,7 +8,6 @@ import {
   FormControl,
   FormLabel,
   Alert,
-  Icon,
   Box,
   Text,
   Flex,
@@ -21,7 +19,8 @@ import {
   CircularProgress,
   InputGroup,
   InputRightElement,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import {ViewOffIcon, ViewIcon} from '@chakra-ui/icons'
 import ThemeToggler from '../../components/ThemeToggler'
 import ThemeProvider from '../../components/ThemeProvider'
 
@@ -105,7 +104,7 @@ const SignUpForm = ({
             <Input
               type="email"
               placeholder=""
-              size="lg"
+              size="md"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -130,29 +129,25 @@ const SignUpForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                size="lg"
+                size="md"
                 name="[user][password]"
                 id="user_password"
-                autocomplete="new-password"
+                autoComplete="new-password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.user.password}
               />
               <InputRightElement width="3rem">
                 <Button
-                  h="1.5rem"
-                  size="sm"
+                  size="xs"
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
-                  {showPassword ? (
-                    <Icon name="view-off" />
-                  ) : (
-                    <Icon name="view" />
-                  )}
+                  {showPassword ? <ViewOffIcon /> : <ViewIcon />}
                 </Button>
               </InputRightElement>
             </InputGroup>
+
             {touched.user &&
             touched.user.password &&
             errors.user &&
@@ -168,11 +163,11 @@ const SignUpForm = ({
             <Input
               type="password"
               placeholder="*******"
-              size="lg"
+              size="md"
               name="[user][password_confirmation]"
               id="user_password_confirmation"
               onChange={handleChange}
-              autocomplete="new-password"
+              autoComplete="new-password"
               onBlur={handleBlur}
               value={values.user.password_confirmation}
             />
@@ -186,14 +181,19 @@ const SignUpForm = ({
             ) : null}
           </FormControl>
           <Button
-            variantColor="teal"
+            colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
             {isLoading ? (
-              <CircularProgress isIndeterminate size="24px" color="teal" />
+              <CircularProgress
+                isIndeterminate
+                w="24px"
+                h="24px"
+                color="teal"
+              />
             ) : (
               'Sign Up'
             )}
@@ -226,7 +226,8 @@ const SignUpScreen = ({
       <Flex width="full" align="center" justifyContent="center">
         <Box
           p={8}
-          maxWidth="500px"
+          maxWidth="600px"
+          minWidth="450px"
           borderWidth={1}
           borderRadius={8}
           boxShadow="lg"
@@ -258,4 +259,4 @@ SignUpScreen.propTypes = {
   signUpPath: PropTypes.string.isRequired,
 }
 
-export default hot(SignUpScreen)
+export default SignUpScreen

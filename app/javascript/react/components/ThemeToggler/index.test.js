@@ -7,7 +7,7 @@ describe('ThemeToggler', () => {
   it('renders light as default colorMode', () => {
     const {getByTestId} = render(withAllTheProviders(<ThemeToggler />))
 
-    expect(getByTestId('light')).toBeTruthy()
+    expect(getByTestId('dark')).toBeTruthy()
   })
 
   it('changes the colormode', () => {
@@ -16,7 +16,7 @@ describe('ThemeToggler', () => {
     )
     const firstRender = asFragment()
 
-    fireEvent.click(getByTestId('light'))
+    fireEvent.click(getByTestId('dark'))
 
     expect(firstRender).toMatchDiffSnapshot(asFragment())
   })

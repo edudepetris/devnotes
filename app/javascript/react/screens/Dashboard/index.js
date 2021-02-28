@@ -1,8 +1,7 @@
-import {hot} from 'react-hot-loader/root'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Box, Grid, Skeleton, Flex} from '@chakra-ui/core'
+import {Box, Grid, Skeleton, Flex} from '@chakra-ui/react'
 import ThemeProvider from '../../components/ThemeProvider'
 import NavBar from '../../components/NavBar'
 import StackNotes from '../../components/StackNotes'
@@ -79,4 +78,4 @@ Dashboard.propTypes = {
   ).isRequired,
 }
 
-export default hot(Dashboard)
+export default Dashboard

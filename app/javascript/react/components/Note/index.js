@@ -24,21 +24,20 @@ import {
   Code,
   List,
   ListItem,
-} from '@chakra-ui/core'
-import devnotesTheme from '../../theme'
+} from '@chakra-ui/react'
 
 /* eslint-disable react/no-children-prop */
 const Meta = ({projectName, createdAt, updatedAt}) => {
   return (
     <List styleType="disc">
       <ListItem>
-        <Code variantColor="teal" children="Project name" /> {projectName}
+        <Code colorScheme="teal" children="Project name" /> {projectName}
       </ListItem>
       <ListItem>
-        <Code variantColor="teal" children="Created at" /> {createdAt}
+        <Code colorScheme="teal" children="Created at" /> {createdAt}
       </ListItem>
       <ListItem>
-        <Code variantColor="teal" children="Updated at" /> {updatedAt}
+        <Code colorScheme="teal" children="Updated at" /> {updatedAt}
       </ListItem>
     </List>
   )
@@ -59,7 +58,7 @@ const Note = ({note}) => {
   const {colorMode} = useColorMode()
   const syntaxHighlighterTheme = {light: github, dark: dracula}
   const renderers = {
-    ...ChakraUIRenderer(devnotesTheme),
+    ...ChakraUIRenderer(),
     code: ({language, value}) => (
       <SyntaxHighlighter
         style={syntaxHighlighterTheme[colorMode]}
@@ -114,9 +113,8 @@ const Note = ({note}) => {
         <ReactMarkdown
           plugins={[[gfm, {singleTilde: false}]]}
           renderers={renderers}
-        >
-          {note.content}
-        </ReactMarkdown>
+          source={note.content}
+        />
       )}
     </Box>
   )
