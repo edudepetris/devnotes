@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
@@ -190,4 +189,4 @@ ForgotPasswordScreen.propTypes = {
   forgotPasswordPath: PropTypes.string.isRequired,
 }
 
-export default hot(ForgotPasswordScreen)
+export default ForgotPasswordScreen

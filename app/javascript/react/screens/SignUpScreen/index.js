@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
@@ -259,4 +258,4 @@ SignUpScreen.propTypes = {
   signUpPath: PropTypes.string.isRequired,
 }
 
-export default hot(SignUpScreen)
+export default SignUpScreen

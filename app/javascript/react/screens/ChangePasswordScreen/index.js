@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root'
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
@@ -242,4 +241,4 @@ ChangePasswordScreen.propTypes = {
   resetPasswordToken: PropTypes.string.isRequired,
 }
 
-export default hot(ChangePasswordScreen)
+export default ChangePasswordScreen
