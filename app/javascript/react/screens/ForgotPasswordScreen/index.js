@@ -153,7 +153,8 @@ const ForgotPasswordScreen = ({
       <Flex width="full" align="center" justifyContent="center">
         <Box
           p={8}
-          maxWidth="500px"
+          maxWidth="600px"
+          minWidth="450px"
           borderWidth={1}
           borderRadius={8}
           boxShadow="lg"
