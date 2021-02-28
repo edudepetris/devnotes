@@ -105,7 +105,7 @@ const LoginForm = ({
             <Input
               type="email"
               placeholder="test@test.com"
-              size="lg"
+              size="md"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -128,7 +128,7 @@ const LoginForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                size="lg"
+                size="md"
                 name="[user][password]"
                 id="user_password"
                 onChange={handleChange}

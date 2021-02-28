@@ -104,7 +104,7 @@ const SignUpForm = ({
             <Input
               type="email"
               placeholder=""
-              size="lg"
+              size="md"
               name="[user][email]"
               id="user_email"
               onChange={handleChange}
@@ -129,7 +129,7 @@ const SignUpForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                size="lg"
+                size="md"
                 name="[user][password]"
                 id="user_password"
                 autoComplete="new-password"
@@ -139,8 +139,7 @@ const SignUpForm = ({
               />
               <InputRightElement width="3rem">
                 <Button
-                  h="1.5rem"
-                  size="sm"
+                  size="xs"
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
@@ -148,6 +147,7 @@ const SignUpForm = ({
                 </Button>
               </InputRightElement>
             </InputGroup>
+
             {touched.user &&
             touched.user.password &&
             errors.user &&
@@ -163,7 +163,7 @@ const SignUpForm = ({
             <Input
               type="password"
               placeholder="*******"
-              size="lg"
+              size="md"
               name="[user][password_confirmation]"
               id="user_password_confirmation"
               onChange={handleChange}

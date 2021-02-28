@@ -7,7 +7,7 @@ exports[`SignInScreen shows/hide password 1`] = `
 
 @@ -236,11 +236,11 @@
                   <input
-                    class=\\"chakra-input css-1c18qr6\\"
+                    class=\\"chakra-input css-8v71ua\\"
                     id=\\"user_password\\"
                     name=\\"[user][password]\\"
                     placeholder=\\"*******\\"

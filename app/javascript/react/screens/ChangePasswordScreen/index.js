@@ -111,7 +111,7 @@ const ChangePasswordForm = ({
               <Input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="*******"
-                size="lg"
+                size="md"
                 name="[user][password]"
                 id="user_password"
                 autoComplete="new-password"
@@ -121,8 +121,7 @@ const ChangePasswordForm = ({
               />
               <InputRightElement width="3rem">
                 <Button
-                  h="1.5rem"
-                  size="sm"
+                  size="xs"
                   onClick={handlePasswordVisibility}
                   data-testid="password-view"
                 >
@@ -145,7 +144,7 @@ const ChangePasswordForm = ({
             <Input
               type="password"
               placeholder="*******"
-              size="lg"
+              size="md"
               name="[user][password_confirmation]"
               id="user_password_confirmation"
               onChange={handleChange}
