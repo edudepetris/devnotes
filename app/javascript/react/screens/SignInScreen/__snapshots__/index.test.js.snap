@@ -5,7 +5,7 @@ exports[`SignInScreen shows/hide password 1`] = `
 - First value
 + Second value
 
-@@ -182,11 +182,11 @@
+@@ -236,11 +236,11 @@
                   <input
                     class=\\"chakra-input css-1c18qr6\\"
                     id=\\"user_password\\"
@@ -18,7 +18,7 @@ exports[`SignInScreen shows/hide password 1`] = `
                   <div
                     class=\\"chakra-input__right-element css-1cithw7\\"
                   >
-@@ -202,16 +202,14 @@
+@@ -256,16 +256,14 @@
                       >
                         <g
                           fill=\\"currentColor\\"

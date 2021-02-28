@@ -5,7 +5,8 @@ exports[`ThemeToggler changes the colormode 1`] = `
 - First value
 + Second value
 
-  <DocumentFragment>
+@@ -28,56 +28,23 @@
+    </script>
     <div
       class=\\"css-s2uf1z\\"
     >
