@@ -18,7 +18,7 @@ const Feature = ({title, desc, selected, handleClick}) => {
       p={5}
       m={1}
       cursor="pointer"
-      boxShadow="md"
+      shadow="md"
       borderWidth="1px"
       _hover={{bg: bgColorHover[colorMode]}}
       _active={{
@@ -59,7 +59,7 @@ const StackNotes = ({notes, handleSelectedNote}) => {
 
   // Add memo
   return (
-    <Stack spacing={8}>
+    <Stack spacing={4}>
       {notes.map(({title, desc, id}, index) => (
         <Feature
           title={title}
