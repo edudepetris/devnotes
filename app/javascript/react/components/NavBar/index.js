@@ -33,6 +33,10 @@ const NavBar = ({authenticityToken}) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
 
+  const signOut = (event) => {
+    document.getElementById('sign-out').click()
+  }
+
   return (
     <Flex
       as="nav"
@@ -59,9 +63,7 @@ const NavBar = ({authenticityToken}) => {
         alignItems="center"
         flexGrow={1}
       >
-        <MenuItems>Docs</MenuItems>
-        <MenuItems>Examples</MenuItems>
-        <MenuItems>Blog</MenuItems>
+        <MenuItems>Dashboard</MenuItems>
         <ThemeToggler />
       </Box>
 
@@ -74,16 +76,10 @@ const NavBar = ({authenticityToken}) => {
           <MenuList>
             <MenuGroup title="Profile">
               <MenuItem>My Account</MenuItem>
-              <MenuItem>Payments </MenuItem>
             </MenuGroup>
             <MenuDivider />
-            <MenuGroup title="Help">
-              <MenuItem>Docs</MenuItem>
-              <MenuItem>FAQ</MenuItem>
-            </MenuGroup>
-            <MenuDivider />
-            <MenuItem>
-              <Link href="/users/sign_out" data-method="delete">
+            <MenuItem onClick={() => signOut(event)}>
+              <Link href="/users/sign_out" data-method="delete" id="sign-out">
                 Sign out
               </Link>
             </MenuItem>
