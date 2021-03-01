@@ -33,7 +33,7 @@ const NavBar = ({authenticityToken}) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
 
-  const signOut = (event) => {
+  const signOut = () => {
     document.getElementById('sign-out').click()
   }
 
@@ -78,7 +78,7 @@ const NavBar = ({authenticityToken}) => {
               <MenuItem>My Account</MenuItem>
             </MenuGroup>
             <MenuDivider />
-            <MenuItem onClick={() => signOut(event)}>
+            <MenuItem onClick={() => signOut()}>
               <Link href="/users/sign_out" data-method="delete" id="sign-out">
                 Sign out
               </Link>
