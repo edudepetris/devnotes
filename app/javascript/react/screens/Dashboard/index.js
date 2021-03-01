@@ -57,12 +57,11 @@ const Dashboard = ({authenticityToken, notes}) => {
               <Note note={note} />
             </Skeleton>
           </Flex>
-
-          <Flex justify="center">
-            <Footer />
-          </Flex>
         </Box>
       </Grid>
+      <Flex justify="center">
+        <Footer />
+      </Flex>
     </ThemeProvider>
   )
 }
