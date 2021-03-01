@@ -24,6 +24,7 @@ import {
   Code,
   List,
   ListItem,
+  useClipboard,
 } from '@chakra-ui/react'
 
 /* eslint-disable react/no-children-prop */
@@ -68,6 +69,7 @@ const Note = ({note}) => {
       </SyntaxHighlighter>
     ),
   }
+  const {hasCopied, onCopy} = useClipboard(note?.content)
 
   if (!note) {
     return null
@@ -78,6 +80,9 @@ const Note = ({note}) => {
       <ButtonGroup spacing={2}>
         <Button size="xs" onClick={onToggle}>
           Raw
+        </Button>
+        <Button size="xs" ref={btnRef} onClick={onCopy}>
+          {hasCopied ? 'Copied' : 'Copy'}
         </Button>
         <Button size="xs" ref={btnRef} onClick={onOpen}>
           Meta

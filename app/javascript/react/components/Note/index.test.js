@@ -45,4 +45,10 @@ describe('Note', () => {
       expect(getByRole('heading', {level: 1})).not.toBeTruthy()
     })
   })
+
+  it('allows Copy the content', () => {
+    const {getByText} = render(withAllTheProviders(<Note note={note} />))
+
+    expect(getByText('Copy')).toBeTruthy()
+  })
 })
