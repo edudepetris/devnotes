@@ -13,7 +13,7 @@ import {getNoteById} from '../../api'
 const Dashboard = ({authenticityToken, notes}) => {
   const [selectedNote, setSelectedNote] = React.useState(null)
 
-  const [loading, setLoading] = React.useState(true)
+  const [loading, setLoading] = React.useState(false)
   const [note, setNote] = React.useState(null)
   const [error, setError] = React.useState(null)
 
@@ -52,8 +52,8 @@ const Dashboard = ({authenticityToken, notes}) => {
         <Box w="90%" h="100vh" p="2" overflowY="scroll">
           {!loading && error && <>Error</>}
 
-          <Flex justify="center">
-            <Skeleton isLoaded={!loading}>
+          <Flex justify="flex-start">
+            <Skeleton w="100%" h="100vh" isLoaded={!loading}>
               <Note note={note} />
             </Skeleton>
           </Flex>
