@@ -2,10 +2,12 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #1A202C;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -19,28 +21,28 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border: 1px solid #4A5568;
+    border-right-color: #4A5568;
+    border-left-color: #4A5568;
+    border-bottom-color: #4A5568;
+    border-top: #FC8181 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-    background-color: white;
+    background-color: #2D3748;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   .rails-default-error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #F56565;
     line-height: 1.5em;
   }
 
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
-    background-color: #F7F7F7;
+    background-color: #FEB2B2;
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -48,20 +50,28 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top-color: #DADADA;
-    color: #666;
+    color: #171923;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
   </style>
 </head>
 
+
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
+      <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <g id="line">
+          <circle cx="36" cy="36" r="23" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M26.1851,27.0707 c2.8995-1.6362,6.2482-2.5699,9.8149-2.5699s6.9153,0.9336,9.8149,2.5699"/>
+          <path d="M42,41c0-1.6568,1.3448-3,3-3c1.6553,0,3,1.3433,3,3c0,1.6552-1.3447,3-3,3C43.3448,44,42,42.6552,42,41"/>
+          <path d="M24,41c0-1.6568,1.3447-3,3-3s3,1.3433,3,3c0,1.6552-1.3447,3-3,3S24,42.6552,24,41"/>
+        </g>
+      </svg>
       <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>You may have mistyped the address or the page may have moved.</p>
   </div>
 </body>
 </html>

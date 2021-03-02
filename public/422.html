@@ -2,10 +2,12 @@
 <html>
 <head>
   <title>The change you wanted was rejected (422)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #1A202C;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -19,28 +21,28 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border: 1px solid #4A5568;
+    border-right-color: #4A5568;
+    border-left-color: #4A5568;
+    border-bottom-color: #4A5568;
+    border-top: #FC8181 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-    background-color: white;
+    background-color: #2D3748;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   .rails-default-error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #F56565;
     line-height: 1.5em;
   }
 
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
-    background-color: #F7F7F7;
+    background-color: #FEB2B2;
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -48,20 +50,26 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top-color: #DADADA;
-    color: #666;
+    color: #171923;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
   </style>
 </head>
 
+
 <body class="rails-default-error-page">
   <!-- This file lives in public/422.html -->
   <div class="dialog">
     <div>
+      <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <g id="line">
+          <path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M49.5657,15.6092c-4.3218,0-8.187,2.3611-10.1887,6.1814L36,29.678l7,6.0169l-6,8.4238L42,51l-3.5852,9.1622l20.462-26.2371 c1.4419-1.9653,2.2134-4.3222,2.2134-6.7934C61.0902,20.7782,55.9202,15.6092,49.5657,15.6092z"/>
+          <path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2" d="M37.0994,50.9843l-5.0534-6.9615l5.9387-8.0457 l-7.0457-5.9463c0,0,1.6215-7.5485,1.455-7.8939c-1.9444-4.0263-5.9185-6.5278-10.3711-6.5278 c-6.3535,0-11.5225,5.169-11.5225,11.5225c0,2.1167,0.5776,4.185,1.6714,5.9814l0.6602,0.9737l20.4624,26.2299l0.3502-0.449 L37.0994,50.9843z"/>
+        </g>
+      </svg>
       <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>Maybe you tried to change something you didn't have access to.</p>
   </div>
 </body>
 </html>
