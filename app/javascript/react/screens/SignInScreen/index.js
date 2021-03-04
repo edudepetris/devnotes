@@ -16,7 +16,6 @@ import {
   Button,
   AlertIcon,
   AlertDescription,
-  CircularProgress,
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react'
@@ -155,22 +154,14 @@ const LoginForm = ({
             ) : null}
           </FormControl>
           <Button
+            isLoading={isLoading}
             colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
-            {isLoading ? (
-              <CircularProgress
-                isIndeterminate
-                w="24px"
-                h="24px"
-                color="teal"
-              />
-            ) : (
-              'Sign In'
-            )}
+            Sign In
           </Button>
         </form>
       </Box>
