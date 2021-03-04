@@ -1,12 +1,9 @@
 name: Deploy
 
 on:
-  workflow_run:
-    workflows: ["Jest specs", "JS lint", "Rubocop", "Ruby tests", "System tests"]
-    branches: [master]
-    types:
-      - completed
-      - requested
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
