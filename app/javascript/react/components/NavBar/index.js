@@ -37,6 +37,10 @@ const NavBar = ({authenticityToken}) => {
     document.getElementById('sign-out').click()
   }
 
+  const myAccount = () => {
+    document.getElementById('my-account').click()
+  }
+
   return (
     <Flex
       as="nav"
@@ -75,10 +79,14 @@ const NavBar = ({authenticityToken}) => {
           <MenuButton as={Button}>Profile</MenuButton>
           <MenuList>
             <MenuGroup title="Profile">
-              <MenuItem>My Account</MenuItem>
+              <MenuItem onClick={myAccount}>
+                <Link href="/users/edit" id="my-account">
+                  My Account
+                </Link>
+              </MenuItem>
             </MenuGroup>
             <MenuDivider />
-            <MenuItem onClick={() => signOut()}>
+            <MenuItem onClick={signOut}>
               <Link href="/users/sign_out" data-method="delete" id="sign-out">
                 Sign out
               </Link>
