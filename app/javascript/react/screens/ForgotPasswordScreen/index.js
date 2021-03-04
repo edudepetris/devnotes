@@ -16,7 +16,6 @@ import {
   Button,
   AlertIcon,
   AlertDescription,
-  CircularProgress,
 } from '@chakra-ui/react'
 import ThemeToggler from '../../components/ThemeToggler'
 import ThemeProvider from '../../components/ThemeProvider'
@@ -107,22 +106,14 @@ const ForgotPasswordForm = ({
           </FormControl>
 
           <Button
+            isLoading={isLoading}
             colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
-            {isLoading ? (
-              <CircularProgress
-                isIndeterminate
-                w="24px"
-                h="24px"
-                color="teal"
-              />
-            ) : (
-              'Send me reset password instructions'
-            )}
+            Send me reset password instructions
           </Button>
         </form>
       </Box>

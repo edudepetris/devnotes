@@ -16,7 +16,6 @@ import {
   Button,
   AlertIcon,
   AlertDescription,
-  CircularProgress,
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react'
@@ -162,22 +161,14 @@ const ChangePasswordForm = ({
             ) : null}
           </FormControl>
           <Button
+            isLoading={isLoading}
             colorScheme="teal"
             variant="outline"
             type="submit"
             width="full"
             mt={4}
           >
-            {isLoading ? (
-              <CircularProgress
-                isIndeterminate
-                w="24px"
-                h="24px"
-                color="teal"
-              />
-            ) : (
-              'Change my password'
-            )}
+            Change my password
           </Button>
         </form>
       </Box>
