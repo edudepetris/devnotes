@@ -7,6 +7,7 @@ import NavBar from '../../components/NavBar'
 import StackNotes from '../../components/StackNotes'
 import Note from '../../components/Note'
 import Footer from '../../components/Footer'
+import Welcome from '../../components/Welcome'
 
 import {getNoteById} from '../../api'
 
@@ -45,20 +46,27 @@ const Dashboard = ({authenticityToken, notes}) => {
     <ThemeProvider>
       <NavBar authenticityToken={authenticityToken} />
 
-      <Grid templateColumns="1fr 3fr" gap={4} overflow="hidden">
-        <Box w="100%" h="100vh" p="2" overflowY="scroll">
-          <StackNotes notes={notes} handleSelectedNote={handleSelectedNote} />
-        </Box>
-        <Box w="90%" h="100vh" p="2" overflowY="scroll">
-          {!loading && error && <>Error</>}
+      {notes.length ? (
+        <Grid templateColumns="1fr 3fr" gap={4} overflow="hidden">
+          <Box w="100%" h="100vh" p="2" overflowY="scroll">
+            <StackNotes notes={notes} handleSelectedNote={handleSelectedNote} />
+          </Box>
+          <Box w="90%" h="100vh" p="2" overflowY="scroll">
+            {!loading && error && <>Error</>}
 
-          <Flex justify="flex-start">
-            <Skeleton w="100%" h="100vh" isLoaded={!loading}>
-              <Note note={note} />
-            </Skeleton>
-          </Flex>
+            <Flex justify="flex-start">
+              <Skeleton w="100%" h="100vh" isLoaded={!loading}>
+                <Note note={note} />
+              </Skeleton>
+            </Flex>
+          </Box>
+        </Grid>
+      ) : (
+        <Box w="100%" h="100vh" p="2" overflowY="scroll">
+          <Welcome />
         </Box>
-      </Grid>
+      )}
+
       <Flex justify="center">
         <Footer />
       </Flex>

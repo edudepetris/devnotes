@@ -57,4 +57,19 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_text '### Devnotes'
   end
+
+  test 'welcome message' do
+    Note.destroy_all
+
+    visit dashboard_path
+
+    fill_in id: 'user_email', with: 'yoda@mail.com'
+    fill_in id: 'user_password', with: 'password'
+
+    click_on 'Sign In'
+
+    assert_text 'Devnotes'
+
+    assert_text 'Follow the link to download the CLI'
+  end
 end
