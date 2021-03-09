@@ -14,6 +14,7 @@ import {
   Menu,
   MenuDivider,
   MenuList,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import {HamburgerIcon} from '@chakra-ui/icons'
 import ThemeToggler from '../ThemeToggler'
@@ -31,6 +32,7 @@ MenuItems.propTypes = {
 /* eslint-disable no-unused-vars */
 const NavBar = ({authenticityToken}) => {
   const [show, setShow] = React.useState(false)
+  const [isMobile] = useMediaQuery('(max-width: 767px)')
   const handleToggle = () => setShow(!show)
 
   const signOut = () => {
@@ -57,9 +59,14 @@ const NavBar = ({authenticityToken}) => {
         </Heading>
       </Flex>
 
-      <Box display={{sm: 'block', md: 'none'}} onClick={handleToggle}>
-        <IconButton aria-label="Menu toggler" icon={<HamburgerIcon />} />
-      </Box>
+      {isMobile && (
+        <Flex>
+          <ThemeToggler />
+          <Box onClick={handleToggle}>
+            <IconButton aria-label="Menu toggler" icon={<HamburgerIcon />} />
+          </Box>
+        </Flex>
+      )}
 
       <Box
         display={{base: show ? 'block' : 'none', md: 'flex'}}
@@ -68,13 +75,13 @@ const NavBar = ({authenticityToken}) => {
         flexGrow={1}
       >
         <MenuItems>Dashboard</MenuItems>
-        <ThemeToggler />
       </Box>
 
       <Box
-        display={{base: show ? 'block' : 'none', md: 'block'}}
+        display={{base: show ? 'flex' : 'none', md: 'flex'}}
         mt={{base: 4, md: 0}}
       >
+        {!isMobile && <ThemeToggler />}
         <Menu>
           <MenuButton as={Button}>Profile</MenuButton>
           <MenuList>

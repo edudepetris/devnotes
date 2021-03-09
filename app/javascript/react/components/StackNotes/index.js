@@ -11,12 +11,13 @@ const Feature = ({title, desc, selected, handleClick}) => {
 
   return (
     <Box
+      flex="1"
+      minWidth="200px"
       onClick={handleClick}
       aria-selected={selected}
       role="tab"
       rounded="md"
       p={5}
-      m={1}
       cursor="pointer"
       shadow="md"
       borderWidth="1px"
@@ -49,7 +50,7 @@ Feature.defaultProps = {
   selected: false,
 }
 
-const StackNotes = ({notes, handleSelectedNote}) => {
+const StackNotes = ({notes, handleSelectedNote, direction}) => {
   const [selected, setSelected] = React.useState(null)
 
   const handleSelected = (index) => {
@@ -59,7 +60,7 @@ const StackNotes = ({notes, handleSelectedNote}) => {
 
   // Add memo
   return (
-    <Stack spacing={4}>
+    <Stack direction={direction} spacing={4}>
       {notes.map(({title, desc, id}, index) => (
         <Feature
           title={title}
@@ -84,6 +85,10 @@ StackNotes.propTypes = {
     }),
   ).isRequired,
   handleSelectedNote: PropTypes.func.isRequired,
+  direction: PropTypes.string,
+}
+StackNotes.defaultProps = {
+  direction: 'column',
 }
 
 export default StackNotes
