@@ -46,46 +46,46 @@ const Dashboard = ({authenticityToken, notes}) => {
   return (
     <ThemeProvider>
       <NavBar authenticityToken={authenticityToken} />
-      {notes.length ? (
-        isMobile ? (
-          <Grid templateRows="125px auto" gap={4} overflow="hidden">
-            <Box p="2" overflowY="scroll">
-              <StackNotes
-                notes={notes}
-                handleSelectedNote={handleSelectedNote}
-                direction="row"
-              />
-            </Box>
-            <Box h="100vh" p="4" overflowY="scroll">
-              {!loading && error && <>Error</>}
 
-              <Flex justify="flex-start">
-                <Skeleton w="100%" h="100vh" isLoaded={!loading}>
-                  <Note note={note} />
-                </Skeleton>
-              </Flex>
-            </Box>
-          </Grid>
-        ) : (
-          <Grid templateColumns="1fr 3fr" gap={4} overflow="hidden">
-            <Box w="100%" h="100vh" p="2" overflowY="scroll">
-              <StackNotes
-                notes={notes}
-                handleSelectedNote={handleSelectedNote}
-              />
-            </Box>
-            <Box w="90%" h="100vh" p="4" overflowY="scroll">
-              {!loading && error && <>Error</>}
+      {notes.length > 0 && isMobile && (
+        <Grid templateRows="125px auto" gap={4} overflow="hidden">
+          <Box p="2" overflowY="scroll">
+            <StackNotes
+              notes={notes}
+              handleSelectedNote={handleSelectedNote}
+              direction="row"
+            />
+          </Box>
+          <Box h="100vh" p="4" overflowY="scroll">
+            {!loading && error && <>Error</>}
 
-              <Flex justify="flex-start">
-                <Skeleton w="100%" h="100vh" isLoaded={!loading}>
-                  <Note note={note} />
-                </Skeleton>
-              </Flex>
-            </Box>
-          </Grid>
-        )
-      ) : (
+            <Flex justify="flex-start">
+              <Skeleton w="100%" h="100vh" isLoaded={!loading}>
+                <Note note={note} />
+              </Skeleton>
+            </Flex>
+          </Box>
+        </Grid>
+      )}
+
+      {notes.length > 0 && !isMobile && (
+        <Grid templateColumns="1fr 3fr" gap={4} overflow="hidden">
+          <Box w="100%" h="100vh" p="2" overflowY="scroll">
+            <StackNotes notes={notes} handleSelectedNote={handleSelectedNote} />
+          </Box>
+          <Box w="90%" h="100vh" p="4" overflowY="scroll">
+            {!loading && error && <>Error</>}
+
+            <Flex justify="flex-start">
+              <Skeleton w="100%" h="100vh" isLoaded={!loading}>
+                <Note note={note} />
+              </Skeleton>
+            </Flex>
+          </Box>
+        </Grid>
+      )}
+
+      {!notes.length && (
         <Box w="100%" h="100vh" p="2" overflowY="scroll">
           <Welcome />
         </Box>
