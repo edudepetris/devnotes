@@ -48,7 +48,7 @@ const Dashboard = ({authenticityToken, notes}) => {
       <NavBar authenticityToken={authenticityToken} />
 
       {notes.length > 0 && isMobile && (
-        <Grid templateRows="125px auto" gap={4} overflow="hidden">
+        <Grid templateRows="145px auto" gap={0} overflow="hidden">
           <Box p="2" overflowY="scroll">
             <StackNotes
               notes={notes}
@@ -56,7 +56,7 @@ const Dashboard = ({authenticityToken, notes}) => {
               direction="row"
             />
           </Box>
-          <Box h="100vh" p="4" overflowY="scroll">
+          <Box h="100vh" p="2" pt="0" overflowY="scroll">
             {!loading && error && <>Error</>}
 
             <Flex justify="flex-start">
