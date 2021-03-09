@@ -217,11 +217,11 @@ const SignUpScreen = ({
       <Flex width="full" align="center" justifyContent="center">
         <Box
           p={8}
-          maxWidth="600px"
-          minWidth="450px"
-          borderWidth={1}
+          maxWidth={{base: 'auto', md: '600px'}}
+          minWidth={{base: 'auto', md: '450px'}}
+          borderWidth={{base: 0, md: 1}}
           borderRadius={8}
-          boxShadow="lg"
+          boxShadow={{base: 'none', md: 'lg'}}
         >
           <SignUpForm
             authenticityToken={authenticityToken}
