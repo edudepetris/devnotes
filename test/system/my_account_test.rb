@@ -23,12 +23,11 @@ class MyAccountTest < ApplicationSystemTestCase
 
     click_on 'Update'
 
-    assert_text 'welcome'
+    assert_text 'Dashboard'
 
-    visit dashboard_path
     click_on 'Profile'
     find('a', text: 'Sign out').click
-    assert_text 'welcome'
+    assert_text 'Login'
 
     visit new_user_session_path
     fill_in id: 'user_email', with: 'yoda@mail.com'

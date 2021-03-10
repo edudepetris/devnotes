@@ -14,6 +14,6 @@ class SignOutTest < ApplicationSystemTestCase
     click_on 'Profile'
     find('a', text: 'Sign out').click
 
-    assert_text 'welcome'
+    assert_text 'Login'
   end
 end
