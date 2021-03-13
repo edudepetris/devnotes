@@ -40,5 +40,7 @@ jobs:
         run: bundle exec rake db:test:prepare
       - name: Precompile assets
         run:  bin/rails assets:precompile
+      - name: Kown issue
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - name: Run test
         run: bin/rails test
