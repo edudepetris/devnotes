@@ -1,6 +1,6 @@
 # 💻 Devnotes
 
-* Ruby version 2.7.1
+* Ruby version 3.0.0
 
 ## Setup
 

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '3.0.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Bundle edge Rails instead: gem 'rails', github: 'attr_reader :attr_namesails/rails'
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 1.2', '>= 1.2.3'
@@ -51,8 +51,8 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'rubocop', '~> 0.91.0'
-gem 'rubocop-rails', '~> 2.8'
+gem 'rubocop', '~> 1.11'
+gem 'rubocop-rails', '~> 2.9', '>= 2.9.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7'
