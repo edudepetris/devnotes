@@ -24,4 +24,11 @@ class NoteTest < ActiveSupport::TestCase
     assert_not n2.valid?
     assert_not_nil n2.errors[:project_name]
   end
+
+  test 'project name is uniq per user' do
+    n2 = @note.dup
+    n2.user = users(:two)
+
+    assert n2.valid?
+  end
 end
