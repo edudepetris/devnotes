@@ -56,6 +56,6 @@ gem 'rubocop-rails', '~> 2.9', '>= 2.9.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7'
-gem 'devise-jwt', '~> 0.7.0'
+gem 'devise-jwt', '~> 0.8.1'
 gem 'rack-cors'
 gem 'react-rails'
