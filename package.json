@@ -24,7 +24,7 @@
     "react_ujs": "^2.6.1",
     "remark-gfm": "^1.0.0",
     "turbolinks": "^5.2.0",
-    "yup": "^0.29.3"
+    "yup": "^0.32.9"
   },
   "version": "0.1.0",
   "devDependencies": {
