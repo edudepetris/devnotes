@@ -8,7 +8,7 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'prettier',
-    'prettier/react',
+    'prettier/prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,14 +17,11 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'prettier',
-  ],
+  plugins: ['react', 'prettier'],
   rules: {
     semi: 0, // default rails files
-    'max-len': ["error", { "ignoreComments": true }], // deault rails files
+    'max-len': ['error', {ignoreComments: true}], // deault rails files
     'react/jsx-filename-extension': 0, // just a preference
-    'prettier/prettier': 'error' // run prettier as an eslint rule
+    'prettier/prettier': 'error', // run prettier as an eslint rule
   },
-};
+}
