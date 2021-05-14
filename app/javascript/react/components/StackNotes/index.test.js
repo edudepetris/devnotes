@@ -9,14 +9,12 @@ describe('StackNotes', () => {
     {
       title: 'Devnotes',
       id: 1,
-      desc:
-        "I'm drinking 🍻 meanwhile I'm 👨‍💻 this project. Is so hard get focus in on thing",
+      desc: "I'm drinking 🍻 meanwhile I'm 👨‍💻 this project. Is so hard get focus in on thing",
     },
     {
       title: 'DeathStar',
       id: 2,
-      desc:
-        'The Death Star was the Empire’s ultimate weapon: a moon-sized space station with the ability to destroy an entire planet.',
+      desc: 'The Death Star was the Empire’s ultimate weapon: a moon-sized space station with the ability to destroy an entire planet.',
     },
     {
       title: 'Notes CLI',
