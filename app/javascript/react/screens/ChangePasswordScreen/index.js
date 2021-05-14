@@ -34,33 +34,27 @@ const ChangePasswordForm = ({
   const handlePasswordVisibility = () => setShowPassword(!showPassword)
 
   /* eslint-disable react/forbid-prop-types */
-  const {
-    touched,
-    errors,
-    values,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      user: {
-        password: '',
-        password_confirmation: '',
+  const {touched, errors, values, handleChange, handleBlur, handleSubmit} =
+    useFormik({
+      initialValues: {
+        user: {
+          password: '',
+          password_confirmation: '',
+        },
       },
-    },
-    validationSchema: Yup.object().shape({
-      user: Yup.object({
-        password: Yup.string()
-          .required('Required')
-          .min(6, '6 characters minimum'),
-        password_confirmation: Yup.string().required('Required'),
+      validationSchema: Yup.object().shape({
+        user: Yup.object({
+          password: Yup.string()
+            .required('Required')
+            .min(6, '6 characters minimum'),
+          password_confirmation: Yup.string().required('Required'),
+        }),
       }),
-    }),
-    onSubmit: () => {
-      setIsLoading(true)
-      document.querySelector('form#change_password_form').submit()
-    },
-  })
+      onSubmit: () => {
+        setIsLoading(true)
+        document.querySelector('form#change_password_form').submit()
+      },
+    })
   /* eslint-enable react/forbid-prop-types */
 
   return (
