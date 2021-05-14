@@ -29,29 +29,25 @@ const ForgotPasswordForm = ({
   const [isLoading, setIsLoading] = useState(false)
 
   /* eslint-disable react/forbid-prop-types */
-  const {
-    touched,
-    errors,
-    values,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      user: {
-        email: (resource && resource.email) || '',
+  const {touched, errors, values, handleChange, handleBlur, handleSubmit} =
+    useFormik({
+      initialValues: {
+        user: {
+          email: (resource && resource.email) || '',
+        },
       },
-    },
-    validationSchema: Yup.object().shape({
-      user: Yup.object({
-        email: Yup.string().email('Invalid email address').required('Required'),
+      validationSchema: Yup.object().shape({
+        user: Yup.object({
+          email: Yup.string()
+            .email('Invalid email address')
+            .required('Required'),
+        }),
       }),
-    }),
-    onSubmit: () => {
-      setIsLoading(true)
-      document.querySelector('form#forgot_password_form').submit()
-    },
-  })
+      onSubmit: () => {
+        setIsLoading(true)
+        document.querySelector('form#forgot_password_form').submit()
+      },
+    })
   /* eslint-enable react/forbid-prop-types */
 
   return (
