@@ -15,7 +15,7 @@ bin/rails db:seed
 ## Starting Up
 
 ```sh-session
-docker-compose up -d
+docker-compose up -d # optional
 bin/rails s
 bin/webpack-dev-server # optional
 ```
@@ -23,7 +23,7 @@ bin/webpack-dev-server # optional
 #### Run tests
 
 ```sh-session
-docker-compose up -d
+docker-compose up -d # optional
 bin/rails test
 bin/rails test:system
 ```
