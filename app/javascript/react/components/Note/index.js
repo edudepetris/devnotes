@@ -54,7 +54,7 @@ Meta.propTypes = {
   updatedAt: PropTypes.string.isRequired,
 }
 
-/* eslint-disable react/display-name, react/prop-types */
+/* eslint-disable react/display-name, react/prop-types, react/jsx-props-no-spreading, react/destructuring-assignment, react/no-children-prop */
 const Note = ({note}) => {
   const {isOpen: showRaw, onToggle} = useDisclosure()
   const {isOpen, onOpen, onClose} = useDisclosure()
@@ -66,9 +66,7 @@ const Note = ({note}) => {
     // https://github.com/mustaphaturhan/chakra-ui-markdown-renderer/issues/15
     // TODO remove this when the issue is fixed.
     tr: (props) => <Tr>{props.children}</Tr>,
-    //Table data cell
     td: (props) => <Td>{props.children}</Td>,
-    //Table header cell
     th: (props) => <Th>{props.children}</Th>,
     code({node, inline, className, children, ...props}) {
       const match = /language-(\w+)/.exec(className || '')
@@ -142,7 +140,7 @@ const Note = ({note}) => {
     </Box>
   )
 }
-/* eslint-enable react/display-name, react/prop-types */
+/* eslint-enable react/display-name, react/prop-types, react/jsx-props-no-spreading, react/destructuring-assignment, react/no-children-prop */
 
 Note.propTypes = {
   note: PropTypes.shape({

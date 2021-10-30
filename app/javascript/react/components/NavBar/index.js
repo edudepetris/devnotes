@@ -6,7 +6,6 @@ import {
   Box,
   Heading,
   Flex,
-  Text,
   Button,
   MenuItem,
   MenuGroup,
