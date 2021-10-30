@@ -1,7 +1,6 @@
 // index.js
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
