@@ -19,16 +19,6 @@ import {
 import {HamburgerIcon} from '@chakra-ui/icons'
 import ThemeToggler from '../ThemeToggler'
 
-const MenuItems = ({children}) => (
-  <Text mt={{base: 4, md: 0}} mr={6} display="block">
-    {children}
-  </Text>
-)
-
-MenuItems.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 /* eslint-disable no-unused-vars */
 const NavBar = ({authenticityToken}) => {
   const [show, setShow] = React.useState(false)
@@ -67,15 +57,6 @@ const NavBar = ({authenticityToken}) => {
           </Box>
         </Flex>
       )}
-
-      <Box
-        display={{base: show ? 'block' : 'none', md: 'flex'}}
-        width={{base: 'full', md: 'auto'}}
-        alignItems="center"
-        flexGrow={1}
-      >
-        <MenuItems>Dashboard</MenuItems>
-      </Box>
 
       <Box
         display={{base: show ? 'flex' : 'none', md: 'flex'}}
