@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {github, dracula} from 'react-syntax-highlighter/dist/cjs/styles/hljs'
@@ -25,6 +25,9 @@ import {
   List,
   ListItem,
   useClipboard,
+  Tr,
+  Td,
+  Th,
 } from '@chakra-ui/react'
 
 /* eslint-disable react/no-children-prop */
@@ -60,14 +63,29 @@ const Note = ({note}) => {
   const syntaxHighlighterTheme = {light: github, dark: dracula}
   const renderers = {
     ...ChakraUIRenderer(),
-    code: ({language, value}) => (
-      <SyntaxHighlighter
-        style={syntaxHighlighterTheme[colorMode]}
-        language={language}
-      >
-        {value}
-      </SyntaxHighlighter>
-    ),
+    // https://github.com/mustaphaturhan/chakra-ui-markdown-renderer/issues/15
+    // TODO remove this when the issue is fixed.
+    tr: (props) => <Tr>{props.children}</Tr>,
+    //Table data cell
+    td: (props) => <Td>{props.children}</Td>,
+    //Table header cell
+    th: (props) => <Th>{props.children}</Th>,
+    code({node, inline, className, children, ...props}) {
+      const match = /language-(\w+)/.exec(className || '')
+      return !inline && match ? (
+        <SyntaxHighlighter
+          children={String(children).replace(/\n$/, '')}
+          style={syntaxHighlighterTheme[colorMode]}
+          language={match[1]}
+          PreTag="div"
+          {...props}
+        />
+      ) : (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      )
+    },
   }
   const {hasCopied, onCopy} = useClipboard(note?.content)
 
@@ -116,9 +134,9 @@ const Note = ({note}) => {
         <Box as="pre">{note.content}</Box>
       ) : (
         <ReactMarkdown
-          plugins={[[gfm, {singleTilde: false}]]}
-          renderers={renderers}
-          source={note.content}
+          remarkPlugins={[remarkGfm, {singleTilde: false}]}
+          components={renderers}
+          children={note.content}
         />
       )}
     </Box>
