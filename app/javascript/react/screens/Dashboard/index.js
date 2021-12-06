@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {Box, Grid, Skeleton, Flex, useMediaQuery} from '@chakra-ui/react'
-import ThemeProvider from '../../components/ThemeProvider'
-import NavBar from '../../components/NavBar'
+import DefaultLayout from '../../layouts/DefaultLayout'
 import StackNotes from '../../components/StackNotes'
 import Note from '../../components/Note'
-import Footer from '../../components/Footer'
 import Welcome from '../../components/Welcome'
 import {getNoteById} from '../../api'
 
@@ -44,9 +42,7 @@ const Dashboard = ({authenticityToken, notes}) => {
   const [isMobile] = useMediaQuery('(max-width: 767px)')
 
   return (
-    <ThemeProvider>
-      <NavBar authenticityToken={authenticityToken} />
-
+    <DefaultLayout authenticityToken={authenticityToken}>
       {notes.length > 0 && isMobile && (
         <Grid templateRows="145px auto" gap={0} overflow="hidden">
           <Box p="2" overflowY="scroll">
@@ -90,11 +86,7 @@ const Dashboard = ({authenticityToken, notes}) => {
           <Welcome />
         </Box>
       )}
-
-      <Flex justify="center">
-        <Footer />
-      </Flex>
-    </ThemeProvider>
+    </DefaultLayout>
   )
 }
 
