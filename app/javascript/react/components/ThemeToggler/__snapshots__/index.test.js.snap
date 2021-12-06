@@ -11,9 +11,9 @@ exports[`ThemeToggler changes the colormode 1`] = `
       class=\\"css-s2uf1z\\"
     >
       <button
--       class=\\"chakra-button css-1pjbvlq\\"
+-       class=\\"chakra-button css-f59olw\\"
 -       data-testid=\\"dark\\"
-+       class=\\"chakra-button css-71pwqt\\"
++       class=\\"chakra-button css-103jld\\"
 +       data-testid=\\"light\\"
         type=\\"button\\"
       >

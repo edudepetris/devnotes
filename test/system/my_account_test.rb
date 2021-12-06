@@ -23,8 +23,6 @@ class MyAccountTest < ApplicationSystemTestCase
 
     click_on 'Update'
 
-    assert_text 'Dashboard'
-
     click_on 'Profile'
     find('a', text: 'Sign out').click
     assert_text 'Login'
