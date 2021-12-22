@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:12.4
+    image: postgres:14
     networks:
       - db_network
     ports:
